@@ -8,24 +8,26 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Home</title>
 </head>
 <body>
+<%--<c:set var="myName" value="Poxos"/>--%>
+<%--My name is ${myName}--%>
 <%  List<User> friends = (List<User>) request.getAttribute("friends");
     List<User> requests = (List<User>) request.getAttribute("requests");
     List<User> users = (List<User>) request.getAttribute("users");
     User admin = (User) session.getAttribute("user");
-   >
+   %>
 
-<div style="    display: inline-block; width: 30%;">
+<div style="display: inline-block; width: 30%;">
     <img src="/getImage?picName=<%=admin.getPicUrl()%>" width="300"/>
     <h1><%=admin.getName()%>
     </h1>
     <h1><%=admin.getSurname()%>
     </h1>
-
 </div>
 
 <div style="display: inline-block;width: 69%">
@@ -45,8 +47,7 @@
             <td>Picture</td>
             <td>Action</td>
         </tr>
-        <%
-            for (User user : users) { %>
+        <%for (User user : users) { %>
         <tr>
             <td><h3><%=user.getName()%>
             </h3></td>

@@ -16,7 +16,7 @@ public class GetImageServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String picName = req.getParameter("picName");
         OutputStream out = resp.getOutputStream();
-        FileInputStream in = new FileInputStream("D:\\David\\SocialSiteStart\\uploadImages\\" + picName);
+        FileInputStream in = new FileInputStream("D:\\git\\SocialSiteStart\\uploadImages"+ picName);
         byte[] buffer = new byte[4096];
         int length;
         while ((length = in.read(buffer)) > 0){

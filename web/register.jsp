@@ -23,6 +23,7 @@
         password: <input type="password" name="password"> <br><br>
         image: <input type="file" name="picture"/><br><br>
         <input type="submit" value="OK"><br><br>
+
     </form>
 </center>
 
